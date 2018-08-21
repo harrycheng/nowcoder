@@ -1,0 +1,3 @@
+ this is my answer for https://www.nowcoder.com/ta/coding-interviews
+
+# just for fun...
