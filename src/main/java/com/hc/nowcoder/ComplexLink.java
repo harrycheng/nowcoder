@@ -1,7 +1,5 @@
 package com.hc.nowcoder;
 
-import java.util.Random;
-
 class RandomListNode {
 	int label;
 	RandomListNode next = null;
