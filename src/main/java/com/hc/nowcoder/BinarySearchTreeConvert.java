@@ -1,18 +1,5 @@
 package com.hc.nowcoder;
 
-class TreeNode {
-    int val = 0;
-    TreeNode left = null;
-    TreeNode right = null;
-
-    public TreeNode(int val) {
-        this.val = val;
-
-    }
-
-}
-
-
 public class BinarySearchTreeConvert {
 
 	private TreeNode lastNode = null;
@@ -109,17 +96,5 @@ public class BinarySearchTreeConvert {
 			convertode(current.right);
 	}
 
-	public static void main(String[] args) {
-    	BinarySearchTreeConvert  bsc = new BinarySearchTreeConvert();
-    	TreeNode root = bsc.construct( new int[] { 5, 3, 2 , 4, 7, 6, 8}, new int[] { 2, 3, 4, 5, 6, 7, 8});
-    	bsc.prePrint(root);
-    	System.out.println("");
-    	bsc.inPrint(root);
-    	
-    	System.out.println("");
-    	
-    	TreeNode list = bsc.Convert(root);
-    	System.out.println("list:");
-    	bsc.linkPrint(list);
-    }    
+  
 }
