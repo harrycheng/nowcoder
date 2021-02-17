@@ -17,7 +17,7 @@ public class BinarySearchTreeConvert {
     		System.out.print(treeRoot.val + " ");
     		prePrint(treeRoot.left);    		
     		prePrint(treeRoot.right);
-    	}    	    	    	
+    	}
     }
 	
 	public void inPrint(TreeNode treeRoot) {    	
