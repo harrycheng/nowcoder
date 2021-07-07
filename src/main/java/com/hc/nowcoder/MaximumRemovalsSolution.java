@@ -42,14 +42,14 @@ public class MaximumRemovalsSolution {
 
         MaximumRemovalsSolution ms = new MaximumRemovalsSolution();
         long startT = System.currentTimeMillis();
-        int r = ms.maximumRemovals(s, p, removable);
+        //int r = ms.maximumRemovals(s, p, removable);
         long endT = System.currentTimeMillis();
         long duration = endT - startT;
         System.out.println("cost :" + duration + " ms");
-        System.out.println(r);
+        //System.out.println(r);
     }
 
-    public int maximumRemovals(String s, String p, int[] removable) {
+    public int maximumRemovalsV1(String s, String p, int[] removable) {
         char[] srcArray = s.toCharArray();
         for (int i = 0; i < removable.length; i++) {
             int index = removable[i];
@@ -60,6 +60,30 @@ public class MaximumRemovalsSolution {
         }
         return removable.length;
     }
+
+    public int maximumRemovalsV2(String s, String p, int[] removable) {
+
+        char[] srcArray = s.toCharArray();
+        int start = 0;
+        int end = srcArray.length / 2;
+
+        if (maximumRemovalsCore(srcArray, p, removable, start, end)) {
+            maximumRemovalsCore(srcArray, p, removable, end + 1, removable.length / 2);
+        }
+        for (int i = 0; i < removable.length; i++) {
+            int index = removable[i];
+            srcArray[index] = '#';
+            if (!isSubsequence(srcArray, p)) {
+                return i;
+            }
+        }
+        return removable.length;
+    }
+
+    private boolean maximumRemovalsCore(char[] srcArray, String p, int[] removable, int start, int end) {
+        return true;
+    }
+
 
     private boolean isSubsequence(char[] tempStr, String p) {
         int j = 0;
