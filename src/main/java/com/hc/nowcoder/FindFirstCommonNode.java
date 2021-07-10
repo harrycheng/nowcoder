@@ -14,8 +14,8 @@ class ListNode {
 public class FindFirstCommonNode {
     public static void main(String[] args) {
         FindFirstCommonNode ffcn = new FindFirstCommonNode();
-        ListNode p1 = ffcn.ArrayToListNode(new int[]{5, 4, 3, 2, 1});
-        ListNode p2 = ffcn.ArrayToListNode(new int[]{9, 8, 7});
+        ListNode p1 = ffcn.ArrayToListNodeHead(new int[]{5, 4, 3, 2, 1});
+        ListNode p2 = ffcn.ArrayToListNodeHead(new int[]{9, 8, 7});
 
         ListNode last = ffcn.findLastNode(p2);
         last.next = p1.next.next;
@@ -36,7 +36,7 @@ public class FindFirstCommonNode {
     }
 
     public ListNode findLastNode(ListNode head) {
-        if(head == null){
+        if (head == null) {
             return null;
         }
         while (head.next != null) {
@@ -45,13 +45,28 @@ public class FindFirstCommonNode {
         return head;
     }
 
-    public ListNode ArrayToListNode(int[] intArray) {
+    public ListNode ArrayToListNodeHead(int[] intArray) {
         ListNode head = null;
         for (int i : intArray) {
             ListNode node = new ListNode(i);
             ListNode temp = head;
             head = node;
             node.next = temp;
+        }
+        return head;
+    }
+
+    public static ListNode ArrayToListNodeTail(int[] intArray) {
+        ListNode head = null;
+        ListNode tail = null;
+        for (int i : intArray) {
+            ListNode node = new ListNode(i);
+            if (head == null) {
+                head = tail = node;
+                continue;
+            }
+            tail.next = node;
+            tail = node;
         }
         return head;
     }
