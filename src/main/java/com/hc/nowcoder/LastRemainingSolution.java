@@ -5,31 +5,33 @@ public class LastRemainingSolution {
         int[] child = new int[n];
         int i = 0;
         int count = 0;
-        while ( childCount(child) > 1){
-            if(child[i%n] == 0){
+        int leftChild = n;
+        while (leftChild > 1) {
+            if (child[i % n] == 0) {
                 count++;
 
-                if( count == m ){
+                if (count == m) {
                     count = 0;
                     child[i % n] = 1;
+                    leftChild--;
                 }
             }
             i++;
-            i = i%n;
+            i = i % n;
         }
 
-        for( int j = 0; i<n; j++){
-            if(child[j] == 0){
+        for (int j = 0; i < n; j++) {
+            if (child[j] == 0) {
                 return j;
             }
         }
-        return  -1;
+        return -1;
     }
 
-    private int  childCount(int[] child) {
+    private int childCount(int[] child) {
         int count = 0;
-        for(int i : child){
-            if(i == 0){
+        for (int i : child) {
+            if (i == 0) {
                 count++;
             }
         }
