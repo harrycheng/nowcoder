@@ -6,11 +6,11 @@ public class TreeNodeDepth {
         System.out.println("");
     }
 
-    public int TreeDepth(TreeNode root) {
+    public int TreeDepth(TreeLinkNode root) {
         return FindTreeDepth(root);
     }
 
-    public int FindTreeDepth(TreeNode root) {
+    public int FindTreeDepth(TreeLinkNode root) {
         if (root != null) {
             int leftDepth = 1 + FindTreeDepth(root.left);
             int rightDepth = 1 + FindTreeDepth(root.right);

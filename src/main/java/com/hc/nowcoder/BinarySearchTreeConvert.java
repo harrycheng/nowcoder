@@ -2,9 +2,9 @@ package com.hc.nowcoder;
 
 public class BinarySearchTreeConvert {
 
-	private TreeNode lastNode = null;
+	private TreeLinkNode lastNode = null;
 	
-	public void linkPrint(TreeNode treeRoot) {    	
+	public void linkPrint(TreeLinkNode treeRoot) {
     	while(treeRoot != null) {      
     		System.out.print(treeRoot.val + " ");
     		treeRoot = treeRoot.right;    		
@@ -12,7 +12,7 @@ public class BinarySearchTreeConvert {
     	System.out.println(" ");
     }
 	
-	public void prePrint(TreeNode treeRoot) {    	
+	public void prePrint(TreeLinkNode treeRoot) {
     	if(treeRoot != null) {      
     		System.out.print(treeRoot.val + " ");
     		prePrint(treeRoot.left);    		
@@ -20,7 +20,7 @@ public class BinarySearchTreeConvert {
     	}
     }
 	
-	public void inPrint(TreeNode treeRoot) {    	
+	public void inPrint(TreeLinkNode treeRoot) {
     	if(treeRoot != null) {       		
     		inPrint(treeRoot.left);
     		System.out.print(treeRoot.val + " ");
@@ -28,18 +28,18 @@ public class BinarySearchTreeConvert {
     	}    	    	    	
     }
 	
-    public TreeNode construct(int[] preorder, int[] inorder) {    	
+    public TreeLinkNode construct(int[] preorder, int[] inorder) {
     	return construct(preorder, 0, preorder.length -1 , inorder, 0, inorder.length -1);    	    	    	
     }
     
-    public TreeNode construct(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd) {    	
+    public TreeLinkNode construct(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd) {
     	
     	if(preStart > preEnd) {    		    		
     		return null;    		    	
     	}
     	
     	int label = preorder[preStart];
-		TreeNode node = new TreeNode(label);
+		TreeLinkNode node = new TreeLinkNode(label);
 		
     	if(preStart == preEnd) {    		    		
     		return node;
@@ -67,7 +67,7 @@ public class BinarySearchTreeConvert {
     	return -1;
 	}
 
-	public TreeNode Convert(TreeNode pRootOfTree) {		
+	public TreeLinkNode Convert(TreeLinkNode pRootOfTree) {
 		convertode(pRootOfTree);
 		while(null != lastNode && null != lastNode.left ) {
 			lastNode = lastNode.left;
@@ -76,11 +76,11 @@ public class BinarySearchTreeConvert {
 		return lastNode;
     }
     
-    private void convertode(TreeNode root) {
+    private void convertode(TreeLinkNode root) {
 		
     	if(root == null)
 			return;
-    	TreeNode current = root;    	
+    	TreeLinkNode current = root;
     	
 		if(current.left != null)
 			convertode(current.left);

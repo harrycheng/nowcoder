@@ -5,21 +5,21 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class HorizonPrint {
-    public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
+    public ArrayList<ArrayList<Integer>> Print(TreeLinkNode pRoot) {
 
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        Queue<TreeLinkNode> queue = new LinkedList<TreeLinkNode>();
 
         if(pRoot == null){
             return res;
         }
         queue.add(pRoot);
-        TreeNode pNode = pRoot;
-        TreeNode pLastAddNode = pRoot;
+        TreeLinkNode pNode = pRoot;
+        TreeLinkNode pLastAddNode = pRoot;
 
         ArrayList<Integer> tempList = new ArrayList<Integer>();
         while (!queue.isEmpty()){
-            TreeNode node = queue.poll();
+            TreeLinkNode node = queue.poll();
             tempList.add(node.val);
 
             if(node.left != null){
@@ -76,7 +76,7 @@ public class HorizonPrint {
         BinarySearchTreeConvert bstc = new BinarySearchTreeConvert();
         HorizonPrint hp = new HorizonPrint();
 
-        TreeNode root =  bstc.construct(new int[]{1,2,4,5,3,6,7}, new int[]{4,2,5,1,6,3,7});
+        TreeLinkNode root =  bstc.construct(new int[]{1,2,4,5,3,6,7}, new int[]{4,2,5,1,6,3,7});
         bstc.prePrint(root);
         System.out.println(" ");
 

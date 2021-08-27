@@ -34,20 +34,20 @@ public class AppTest extends TestCase {
 	
 	public void testConstructTree() {
 		BinarySearchTreeConvert bsc = new BinarySearchTreeConvert();
-		TreeNode root = bsc.construct(new int[] { 5, 3, 2, 4, 7, 6, 8 },  new int[] { 2, 3, 4, 5, 6, 7, 8 });
+		TreeLinkNode root = bsc.construct(new int[] { 5, 3, 2, 4, 7, 6, 8 },  new int[] { 2, 3, 4, 5, 6, 7, 8 });
 		bsc.prePrint(root);
 		System.out.println("");
 		bsc.inPrint(root);
 
 		System.out.println("");
-		TreeNode list = bsc.Convert(root);
+		TreeLinkNode list = bsc.Convert(root);
 		System.out.println("list:");
 		bsc.linkPrint(list);
 	}
 	
 	public void testCountTree() {
 		BinarySearchTreeConvert bsc = new BinarySearchTreeConvert();
-		TreeNode root = bsc.construct(new int[] { 5, 3, 2, 4, 7, 6, 8 },  new int[] { 2, 3, 4, 5, 6, 7, 8 });
+		TreeLinkNode root = bsc.construct(new int[] { 5, 3, 2, 4, 7, 6, 8 },  new int[] { 2, 3, 4, 5, 6, 7, 8 });
 		
 		TreeDepthClass treeDepthClass = new TreeDepthClass();
 		int count = treeDepthClass.TreeDepth(root);

@@ -4,13 +4,13 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class TreeNodeMirror {
-    public TreeNode Mirror_recursion(TreeNode pRoot) {
+    public TreeLinkNode Mirror_recursion(TreeLinkNode pRoot) {
         // write code here
         if (pRoot == null) {
             return null;
         }
 
-        TreeNode temp = pRoot.left;
+        TreeLinkNode temp = pRoot.left;
         pRoot.left = pRoot.right;
         pRoot.right = temp;
 
@@ -19,18 +19,18 @@ public class TreeNodeMirror {
         return pRoot;
     }
 
-    public TreeNode Mirror_notrecursion(TreeNode pRoot) {
+    public TreeLinkNode Mirror_notrecursion(TreeLinkNode pRoot) {
         // write code here
         if (pRoot == null) {
             return null;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeLinkNode> queue = new LinkedList<>();
         queue.add(pRoot);
         while ( !queue.isEmpty()){
 
-           TreeNode cur =  queue.poll();
-            TreeNode temp =  cur.left;
+           TreeLinkNode cur =  queue.poll();
+            TreeLinkNode temp =  cur.left;
             cur.left = cur.right;
             cur.right = temp;
 

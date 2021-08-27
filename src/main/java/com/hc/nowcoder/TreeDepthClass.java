@@ -2,12 +2,12 @@ package com.hc.nowcoder;
 
 import java.lang.Math;
 public class TreeDepthClass {
-    public int TreeDepth(TreeNode root) {
+    public int TreeDepth(TreeLinkNode root) {
     	int count = 0;
     	return countDepth(root, count);
     }
 
-	private int countDepth(TreeNode root, int count) {
+	private int countDepth(TreeLinkNode root, int count) {
 		if(root == null) {
 			return count;
 		} 
