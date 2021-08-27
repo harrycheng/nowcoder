@@ -16,11 +16,13 @@ public class HasPathSolution {
     boolean dfs(char[][] matrix, char[] word, int i, int j, int index) {
         //边界的判断，如果越界直接返回false。index表示的是查找到字符串word的第几个字符，
         //如果这个字符不等于matrix[i][j]，说明验证这个坐标路径是走不通的，直接返回false
-        if (i >= matrix.length || i < 0 || j >= matrix[0].length || j < 0 || matrix[i][j] != word[index])
+        if (i >= matrix.length || i < 0 || j >= matrix[0].length || j < 0 || matrix[i][j] != word[index]) {
             return false;
+        }
         //如果word的每个字符都查找完了，直接返回true
-        if (index == word.length - 1)
+        if (index == word.length - 1) {
             return true;
+        }
         //把当前坐标的值保存下来，为了在最后复原
         char tmp = matrix[i][j];
         //然后修改当前坐标的值
